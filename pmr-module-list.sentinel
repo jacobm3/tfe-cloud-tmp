@@ -2,11 +2,12 @@ import "tfconfig"
 import "tfplan"
 import "strings"
 
-# Explicit list of allowed modules
+# List of allowed modules
 allowed_modules = [
   "app.terraform.io/jacobm3/s3_simple/aws",
 ]
 
+# Only allow modules from allowed_modules list
 require_modules_from_pmr = rule { 
   all tfconfig.modules as _, m {
     print("source: ", m.source) and
