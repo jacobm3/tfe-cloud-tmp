@@ -8,7 +8,7 @@ allowed_modules = [
 ]
 
 # Only allow modules from allowed_modules list
-require_modules_from_pmr = rule { 
+require_allowed_modules = rule { 
   all tfconfig.modules as _, m {
     print("source: ", m.source) and
     m.source in allowed_modules
