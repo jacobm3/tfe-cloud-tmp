@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
 module "s3_simple" {
   source  = "app.terraform.io/jacobm3/s3_simple/aws"
   version = "1.0"
