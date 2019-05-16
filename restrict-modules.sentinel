@@ -7,8 +7,8 @@ allowed_modules = [
   "app.terraform.io/jacobm3/s3_simple/aws",
 ]
 
-# Only allow modules from allowed_modules list
-require_allowed_modules = rule { 
+# Restrict all modules directly under root module 
+restrict_modules = rule { 
   all tfconfig.modules as _, m {
     print("source: ", m.source) and
     m.source in allowed_modules
